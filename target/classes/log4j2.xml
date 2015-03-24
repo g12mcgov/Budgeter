@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration package="com.mcgovern" status="INFO">
+
+    <!-- Properties for Logging go here (i.e., write to .log file) -->
+    <Properties>
+        <!-- Log outputs from API hits -->
+        <Property name="filename-new-budgeter-log">../logs/budgeter.log</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="appender-Console-all" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <File name="appender-new-budgeter-log" fileName="${filename-new-budgeter-log}" append="true">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} - %msg%n" />
+        </File>
+
+    </Appenders>
+
+    <Loggers>
+        <!-- Every configuration must have a root logger. If one is not configured the default root LoggerConfig is ERROR with Console appender attach. -->
+        <Root level="DEBUG">
+            <AppenderRef ref="appender-Console-all"/>
+        </Root>
+
+        <Logger name="com.mcgovern.budgeter.loggenerator.budgeterLogger" level="ALL">
+            <AppenderRef ref="appender-new-budgeter-log" level="ERROR"/>
+        </Logger>
+
+        <Logger name="com.mcgovern.budgeter.loggenerator.databaseLogger" level="ALL">
+            <AppenderRef ref="appender-new-budgeter-log" level="ERROR"/>
+        </Logger>
+
+    </Loggers>
+
+</Configuration>

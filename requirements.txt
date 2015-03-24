@@ -1,0 +1,5 @@
+keyring==5.3
+mintapi==1.8
+requests==2.6.0
+wsgiref==0.1.2
+xmltodict==0.9.2

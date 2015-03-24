@@ -1,0 +1,1 @@
+CREATE TABLE statements (date DATE NOT NULL, balance int(11) NOT NULL, account int(24) NOT NULL, email varchar(255) NOT NULL, PRIMARY KEY (email)) ENGINE=MyISAM DEFAULT CHARSET=latin1;
